@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = [
   { id: '1', name: 'amanda', umur: '22', },
-  { id: '2', name: 'john', umur: '19',}
-  // localStorage.getItem('users')
+  { id: '2', name: 'john', umur: '19',},
+  localStorage.getItem('form')
 ]
+
 
 const userSlice = createSlice({
   name: 'users',
