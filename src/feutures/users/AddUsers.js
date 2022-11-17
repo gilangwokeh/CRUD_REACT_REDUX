@@ -28,29 +28,28 @@ const AddUsers = () => {
   const [Values, setValues] = useState(getDatafromLS())
   const handleAddUser = (e) => {
     e.preventDefault()
-    setValues({ id: uuidv4(), name: '', umur: '', hobi: '', Alamat: '' })
-    if (!Values.name && !Values.umur && !Values.hobi && !Values.Alamat) {
+    if (!Values.name , !Values.umur , !Values.hobi , !Values.Alamat) {
       const regMatch = /^[a-zA-Z]*$/.test(Values.name);
       const regMatch2 = /^[a-zA-Z]*$/.test(Values.hobi);
       const reqMatchNumber = /[0-9]/.test(Values.umur);
-      if (Values.name !== regMatch) {
-        setError('nama harus isi')
-      } else {
+      if (Values.name === regMatch) {
         setError(null)
-      }
-      if (Values.umur !== reqMatchNumber) {
-        setError2('Tolong masukkan angka')
       }else{
+        setError('nama harus isi')
+      };
+      if (Values.umur === reqMatchNumber) {
         setError2(null)
-      }
-      if (Values.hobi !== regMatch2) {
-        setError3('hobi anda kosong')
       }else{
+        setError2('Tolong masukkan angka')
+      };
+      if (Values.hobi === regMatch2) {
         setError3(null)
+      }else{
+        setError3('hobi anda kosong')
       }
       if (!Values.Alamat) {
         setError4('Alamat Anda kosong')
-      } 
+      };
     }else {
       dispatch(addUser({
         id: uuidv4(),
@@ -60,6 +59,7 @@ const AddUsers = () => {
         Alamat: Values.Alamat
       }));
       localStorage.setItem('form', JSON.stringify(Values));
+      setValues({ id: uuidv4(), name: '', umur: '', hobi: '', Alamat: '' });
       setNavigate(true);
     }
   };
