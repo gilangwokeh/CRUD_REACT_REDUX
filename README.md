@@ -11,3 +11,7 @@ berfungsi untuk menjalankan development kodingan menjadi aplikasi website terlih
 ### `npm run build`
 berfungsi membuat aplikasi dari hasil kelola kodingan menjadi folder ringkas yang di jadikan build.
 
+### `hasil :`
+<pre>
+https://crudreadjs.netlify.app/
+</pre>
