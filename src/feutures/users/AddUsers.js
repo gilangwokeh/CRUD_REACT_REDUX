@@ -1,14 +1,14 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import Button from '../../component/Button'
 import Text from '../../component/Text'
 import { v4 as uuidv4 } from 'uuid';
 import { addUser } from './userSlide'
 const AddUsers = () => {
   const getDatafromLS = () => {
-    const data = localStorage.getItem('from');
+    const data = localStorage.getItem('users');
     if (data) {
      return JSON.parse(data);
     }
@@ -16,8 +16,8 @@ const AddUsers = () => {
       return []
     }
   }
-  if(localStorage.getItem('form') === null){
-    localStorage.setItem('from' , '[]')
+  if(localStorage.getItem('users') === null){
+    localStorage.setItem('users' , '[]')
   }
   const dispatch = useDispatch();
   const [navigate, setNavigate] = useState(false);

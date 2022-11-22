@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = [
-  JSON.parse(localStorage.getItem('form'))
-]
+const initialState = [];
 
 
 const userSlice = createSlice({
