@@ -28,7 +28,7 @@ const AddUsers = () => {
   const [Values, setValues] = useState(getDatafromLS())
   const handleAddUser = (e) => {
     e.preventDefault()
-    if (!Values.name , !Values.umur , !Values.hobi , !Values.Alamat) {
+    if (!Values.name || !Values.umur || !Values.hobi || !Values.Alamat) {
       const regMatch = /^[a-zA-Z]*$/.test(Values.name);
       const regMatch2 = /^[a-zA-Z]*$/.test(Values.hobi);
       const reqMatchNumber = /[0-9]/.test(Values.umur);
